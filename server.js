@@ -1,4 +1,4 @@
-// Load environment variables (MONGO_URL)
+// Load environment variables (MONGO_URI)
 require("dotenv").config();
 
 const express = require("express");
@@ -13,7 +13,7 @@ app.use(cors());
 
 // Connect to MongoDB Atlas (or local if needed)
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log("MongoDB Error:", err));
 
